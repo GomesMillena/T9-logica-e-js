@@ -1,6 +1,38 @@
 ### Exercícios simples
 
 **1.** Faça um algoritmo que receba uma letra e determine se é uma vogal ou consoante (Faça duas versões deste código, uma utilizando if-else e outra utilizando switch-case);
+```
+// Solicitando a letra do usuário
+const letra = prompt('Digite uma letra do alfabeto.');
+
+// Resolvendo com switch
+switch (letra) {
+    case 'a': // Colocamos os cases seguidos um do outro para economizar
+    case 'e': // código, já que todos eles terão a mesma mensagem
+    case 'i':
+    case 'o':
+    case 'u': 
+        alert(`A letra ${letra} é uma vogal`);
+        break; // Se não houver o break, o alert dentro de default tbm será mostrado
+    default:
+        alert(`A letra ${letra} é uma consoante`);
+}
+
+
+// Resolvendo com if
+// Verificando o valor da constante letra
+// || (pipe) significa ou
+// Meu if quer dizer "Se letra igual a 'a' OU letra igual a 'e' ..."
+// if (letra === 'a'
+//     || letra === 'e'
+//     || letra === 'i'
+//     || letra === 'o'
+//     || letra === 'u') {
+//     alert(`A letra ${letra} é uma vogal`);
+// } else { // Qualquer outra letra que não passar no teste do if, é uma consoante
+//     alert(`A letra ${letra} é uma consoante`);
+// }
+```
 
 **2.** Escreva um código que receba um número (1-7) e devolva o dia da semana correspondente;
 ```
@@ -34,7 +66,102 @@ switch (diaSemana) {
 ```
 
 **3.** Escreva um código que receba um número (1-12), e diga qual mês e quantos dias ele tem;
+```
+let numeroMes = prompt('Digite o número do mês (1-12)');
+numeroMes = parseInt(numeroMes);
 
+switch (numeroMes) {
+    case 1:
+        alert(`Janeiro é o mês ${numeroMes} e possui 31 dias`);
+        break;
+    case 2:
+        alert(`Fevereiro é o mês ${numeroMes} e possui 28 ou 29 dias`);
+        break;
+    case 3:
+        alert(`Março é o mês ${numeroMes} e possui 31 dias`);
+        break;
+    case 4:
+        alert(`Abril é o mês ${numeroMes} e possui 30 dias`);
+        break;
+    case 5:
+        alert(`Maio é o mês ${numeroMes} e possui 31 dias`);
+        break;
+    case 6:
+        alert(`Junho é o mês ${numeroMes} e possui 30 dias`);
+        break;
+    case 7:
+        alert(`Julho é o mês ${numeroMes} e possui 31 dias`);
+        break;
+    case 8:
+        alert(`Agosto é o mês ${numeroMes} e possui 31 dias`);
+        break;
+    case 9:
+        alert(`Setembro é o mês ${numeroMes} e possui 30 dias`);
+        break;
+    case 10:
+        alert(`Outubro é o mês ${numeroMes} e possui 31 dias`);
+        break;
+    case 11:
+        alert(`Novembro é o mês ${numeroMes} e possui 30 dias`);
+        break;
+    case 12:
+        alert(`Dezembro é o mês ${numeroMes} e possui 31 dias`);
+        break;
+    default:
+        alert('Não é um mês conhecido');
+}
+
+// switch (numeroMes) {
+//     case 2:
+//         alert(`Fevereiro é o mês ${numeroMes} e possui 28 ou 29 dias`);
+//         break;
+//     case 4:
+//     case 6:
+//     case 9:
+//     case 11: {
+//         let nomeMes;
+//         if (numeroMes === 4) {
+//             nomeMes = 'Abril';
+//         } else if (numeroMes === 6) {
+//             nomeMes = 'Junho';
+//         } else if (numeroMes === 9) {
+//             nomeMes = 'Setembro';
+//         } else {
+//             nomeMes = 'Novembro';
+//         }
+//         alert(`${nomeMes} é o mês ${numeroMes} e possui 30 dias`);
+//     }
+//         break;
+//     case 1:
+//     case 3:
+//     case 5:
+//     case 7:
+//     case 8:
+//     case 10:
+//     case 12: {
+//         let nomeMes;
+//         if (numeroMes === 1) {
+//             nomeMes = 'Janeiro';
+//         } else if (numeroMes === 3) {
+//             nomeMes = 'Março';
+//         } else if (numeroMes === 5) {
+//             nomeMes = 'Maio';
+//         } else if (numeroMes === 7) {
+//             nomeMes = 'Julho';
+//         } else if (numeroMes === 8) {
+//             nomeMes = 'Agosto';
+//         } else if (numeroMes === 10) {
+//             nomeMes = 'Outubro';
+//         } else {
+//             nomeMes = 'Dezembro';
+//         }
+//         alert(`${nomeMes} é o mês ${numeroMes} e possui 31  dias`)
+//     }
+//         break;
+//     default:
+//         alert('Esse mês não faz parte do calendário gregoriano');
+// }
+```
 **4.** Escreva um código que receba dois número e determine qual o maior entre eles;
 ```
 const num1 = prompt('Digite o primeiro número:');
