@@ -177,22 +177,117 @@ if (num1 > num2) {
 ```
 
 **5.** Escreva um código que receba um número e determine se ele é par ou ímpar, e se é negativo ou positivo;
+```
+//Se o número é par, ele é divisivél por dois (ex: 4%2 =0)
+//Se o número é  impar, ele não é divisivél por dois (ex: 5%2!=0)
+//Se o número for positivo é maior que zero
+//Se o número for negativo é menor que zero
 
-**6.** Escreva um código que receba três ângulos e determine se eles formam um triângulo válido.
-Em um triângulo válido, a soma dos três ângulos é igual a 180º.
+const numero = parseInt(prompt('Digite um número'));
 
-**7.**. Elaborar um algoritmo que lê 2 valores a e b e informa se são múltiplos ou não.
+if (numero % 2 === 0 && numero > 0) {
+    alert(`${numero} é par, e ele é positivo`);
+} else if (numero % 2 === 0 && numero < 0) {
+    alert(`${numero} é par, e ele é negativo`);
+} else if (numero % 2 !== 0 && numero > 0) {
+    alert(`${numero} é impar, e ele é positivo`);
+} else if (numero % 2 !== 0 && numero < 0) {
+    alert(`${numero} é par, e ele é negativo`);
+} else {
+    alert(`${numero} é um número neutro`);
+}
+```
+
+**6.** Escreva um código que receba três ângulos e determine se eles formam um triângulo válido. Em um triângulo válido, a soma dos três ângulos é igual a 180º.
+```
+const angulo1 = parseFloat(prompt('Digite o primeiro ângulo'));
+const angulo2 = parseFloat(prompt('Digite o segundo ângulo'));
+const angulo3 = parseFloat(prompt('Digite o terceiro ângulo'));
+
+if(angulo1 + angulo2 + angulo3 === 180){
+    alert('Os ângulos informados resultam num triângulo válido');
+}else{
+    alert('Os ângulos não resultam num triângulo válido');
+}
+```
+
+**7.** Elaborar um algoritmo que lê 2 valores a e b e informa se são múltiplos ou não.
+```
+const numero1 = parseInt(prompt('Digite o primeiro número'));
+const numero2 = parseInt(prompt('Digite o segundo número'));
+
+if (numero1 % numero2 === 0) {
+    alert(`${numero1} é múltiplo de ${numero2}`);
+} else if (numero2 % numero1 === 0) {
+    alert(`${numero2} é múltiplo de ${numero1}`);
+} else {
+    alert(`${numero1} e ${numero2} não são múltiplos`);
+}
+```
 
 **8.** Crie um código que retorne a quantidade de pontos que seu time fez de acordo com o resultado do jogo. (Se o seu time venceu, ele recebe 3 pontos. Se o resultado foi empate, ele recebe 1 ponto. Se ele perdeu, não recebe nada.)
+```
+const resultado = prompt('Quantos pontos seu time fez? Digite "v" para vitória, "e" para empate e "d" para derrota');
+
+switch(resultado){
+    case 'v':
+        alert('Vitória!! Seu time fez três pontos');
+        break;
+    case 'e':
+        alert('Empate. Seu time ganhou 1 ponto');
+        break;
+    case 'd':
+        alert('Não foi dessa vez, você não conseguiu nenhum ponto');
+        break;
+    default:
+        alert('Opção inválida');
+}
+```
 
 **9.** Elabore um programa que dada a idade de um nadador classifica-o em uma das seguintes categorias:
-* Infantil A = 5 - 7 anos
+* Infantil A = 5-7 anos
 * Infantil B = 8-10 anos
 * Juvenil A = 11-13 anos
 * Juvenil B = 14-17 anos
-* Adulto = maiores de 18 anos
+* Adulto = a partir de 18 anos
+```
+const idade = parseInt(prompt('Qual a idade do competidor?'));
+
+if (idade >= 5 && idade <= 7) {
+    alert('Competidor da categoria Infantil A');
+} else if (idade >= 8 && idade <= 10) {
+    alert('Competidor da categoria Infantil B');
+} else if (idade >= 11 && idade <= 13) {
+    alert('Competidor da categoria Juvenil A');
+} else if (idade >= 14 && idade <= 17) {
+    alert('Competidor da categoria Juvenil B');
+} else if (idade >= 18) {
+    alert('Competidor da categoria Adulto');
+} else {
+    alert(`Alguém de ${idade} anos não pode competir`);
+}
+```
 
 **10.** Faça um algoritmo que dado um número, retorne a classificação do ângulo. (Ângulo agudo: ângulo com medida maior que 0° menor que 90°; Ângulo reto: ângulo com medida igual a 90°; Ângulo obtuso: ângulo com medida maior que 90° e menor que 180°; Ângulo raso: ângulo com medida igual a 0° ou 180°; Ângulo Côncavo: ângulo com medida entre 180° e 360°; Ângulo completo: ângulo com medida igual a 360°).
+```
+const angulo = parseFloat(prompt('Informe o ângulo desejado'));
+
+if (angulo > 0 && angulo < 90) {
+    alert(`${angulo}° é um ângulo agudo`);
+} else if (angulo === 90) {
+    alert(`${angulo}° é um ângulo reto`);
+} else if (angulo > 90 && angulo < 180) {
+    alert(`${angulo}° é um ângulo obtuso`);
+} else if (angulo > 180 && angulo < 360) {
+    alert(`${angulo}° é um ângulo côncavo`);
+} else if (angulo === 0 || angulo === 180) {
+    alert(`${angulo}° é um ângulo raso`);
+} else if (angulo === 360) {
+    alert(`${angulo}° é um ângulo completo`);
+} else {
+    alert(`Esse ângulo está além da compreensão`);
+}
+```
 
 ### Exercícios [menos] simples 
 
@@ -227,6 +322,45 @@ Em um triângulo válido, a soma dos três ângulos é igual a 180º.
 | 101 | Gerente | 10% |
 | 102 | Engenheiro |	20% |
 | 103 | Técnico | 30% |
+
+```
+// 101 Gerente 10%
+// 102 Engenheiro 20%
+// 103 Técnico 30%
+// XXX 40%
+
+// Input: Código do cargo e o salário
+// Output: Salário antigo, novo salário e diferença
+
+const codigo = prompt('Digite o código do cargo');
+const salario = parseFloat(prompt('Digite o salário atual do trabalhador'));
+
+let percentAumento = 0.4;
+if (codigo === '101') {
+    percentAumento = 0.1;
+} else if (codigo === '102') {
+    percentAumento = 0.2;
+} else if (codigo === '103') {
+    percentAumento = 0.3;
+}
+
+// switch(codigo){
+//     case '101':
+//         percentAumento = 0.1;
+//         break;
+//     case '102':
+//         percentAumento = 0.2;
+//         break;
+//     case '103':
+//         percentAumento = 0.3;
+//         break;
+// }
+
+
+const salarioNovo = salario + salario * percentAumento;
+
+alert(`Salário anterior: ${salario}; Salário novo: ${salarioNovo}; Diferença: ${salarioNovo - salario}`)
+```
 
 **5.** Escrever um algoritmo que lê o número de identificação, as 3 notas obtidas por um aluno nas 3 verificações e a média dos exercícios que fazem parte da avaliação. Calcular a média de aproveitamento, usando a fórmula:
 
